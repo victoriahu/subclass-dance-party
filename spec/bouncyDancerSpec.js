@@ -7,7 +7,7 @@ describe('bouncyDancer', function() {
     bouncyDancer = new makeBouncyDancer(10, 20, timeBetweenSteps);
   });
 
-  it('should have a jQuery $node object', function() {
-    expect(bouncyDancer.$node).to.be.an.instanceof(jQuery);
+  it('should be an instanceof bounceDancer', function() {
+    expect(bouncyDancer).to.be.an.instanceof(makeBouncyDancer);
   });
 });
