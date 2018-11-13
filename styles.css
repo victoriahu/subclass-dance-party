@@ -42,13 +42,17 @@ body, a:link, a:visited, a:active{
 }
 
 .harry{
-  border:10px solid RebeccaPurple;
-  border-radius:10px;
   position:absolute;
-  
+  content: url("https://vignette.wikia.nocookie.net/potterpuppetpals/images/b/b3/Harry_Potter_Puppet_Pal.png/revision/latest?cb=20111127203016");
+  height:100px;
 }
 
 @keyframes bounce {
   from { transform: translate3d(0, 0, 0);     }
   to   { transform: translate3d(0, 70px, 0); }
+}
+
+body {
+  background-image: url(images/greatHall.png);
+  background-size: cover;
 }

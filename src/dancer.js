@@ -44,7 +44,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   makeDancer.prototype.lineUp = function(i) {
 
     var styleSettings = {
-      top: window.screen.height/4,
+      top: window.screen.height/6,
       left: (window.screen.width / window.dancers.length) * i + 100,
     }
     this.$node.css(styleSettings);
