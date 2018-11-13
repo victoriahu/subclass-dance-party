@@ -22,6 +22,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
     // it just schedules the next step
    // console.log("step is invoked");
     //setTimeout(this.step, this.timeBetweenSteps);
+    console.log(this);
     setTimeout(this.step.bind(this), this.timeBetweenSteps);
   };
   
