@@ -13,6 +13,10 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+.customButton {
+  padding:5px 12px;
+  float:right;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -21,20 +25,35 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
 }
 
-.awkward {
-  border:10px solid chartreuse;
-  border-radius:10px;
+.awkward, .spell{
   position:absolute;
+  animation: shake 3s infinite cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-4px, 5px, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(3px, 3px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 3px, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 2px, 0);
+  }
+}
 .bouncy{
-  border:10px solid aqua;
-  border-radius:10px;
   position:absolute;
   animation: bounce 0.5s cubic-bezier(.5,0.05,1,.5);
   animation-direction: alternate;
@@ -47,6 +66,34 @@ body, a:link, a:visited, a:active{
   height:100px;
 }
 
+.ron{
+  position:absolute;
+  content: url(images/ron.jpg);
+  height:100px;
+}
+
+.hermione{
+  position:absolute;
+  content: url(images/hermione.jpg);
+  height:100px;
+}
+
+.voldemort{
+  position:absolute;
+  content: url(images/voldemort.png);
+  height:100px;
+}
+
+.blinky {
+  position:absolute;
+}
+
+.dumbledore{
+  position:absolute;
+  content: url(images/dumbledore.jpg);
+  height:100px;
+}
+
 @keyframes bounce {
   from { transform: translate3d(0, 0, 0);     }
   to   { transform: translate3d(0, 70px, 0); }
@@ -55,4 +102,9 @@ body, a:link, a:visited, a:active{
 body {
   background-image: url(images/greatHall.png);
   background-size: cover;
+}
+
+.spell {
+  content: url("https://vignette.wikia.nocookie.net/elderscrolls/images/c/c6/MAGINVParalyze.png/revision/latest?cb=20120311053522");
+  position: absolute;
 }

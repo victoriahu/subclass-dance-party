@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.numHarry = 0;
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -34,6 +35,9 @@ $(document).ready(function() {
     if (dancer instanceof makeAwkwardDancer) {
       dancer.$node.mouseover(() => alert('hi'));
     }
+    if (dancer instanceof makeBouncyDancer) {
+      dance.$node.addClass(dancer.name);
+    }
     // setup click listener
 
   });
@@ -45,9 +49,81 @@ $(document).ready(function() {
     }
   });
 
+  $(".dumbledoreButton").click(function() {
+    var dancer = new makeBlinkyDancer(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000,
+      'dumbledore'
+    );
+    $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $(".bouncyButton").click(function(e) {
+    if (e.target.attributes.charName.value === "harry") {
+      if (window.numHarry > 0) {
+        return;
+      }
+    else {
+      numHarry++;
+    }
+    }
+    var dancer = new makeBouncyDancer(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000,
+      e.target.attributes.charName.value
+    );
+    $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
   $(".awkward").mouseover(function() {
     alert("HOVERED");
     console.log("AWKWARD");
+  });
+
+  $(".awkwardButton").click(function(e) {
+    var dancer = new makeAwkwardDancer(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000,
+      e.target.attributes.charName.value
+    );
+    $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $(".shootHarry").click(function() {
+    //iterate through all dancers 
+    //if dancer is voldemort instance
+    //create an element circle ball
+    //assign from location to voldemort's location
+    //set to location to harry's location
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (window.dancers[i] instanceof makeAwkwardDancer) {
+        if (window.dancers[i].name === "voldemort") {
+          let currentVoldemort = window.dancers[i];
+          // create element and store it in newSpell
+          var $newSpell = $('<span class="spell"></span>');
+          // copy voldemorts positions and apply it to newSPELL
+          // var voldemortPosition = currentVoldemort.$node.css(styleSettings);
+          // append newSpell to body
+          var styleSettings = {
+            top: currentVoldemort.$node.css("top"),
+            left: currentVoldemort.$node.css("left")
+          }
+          
+          $("body").append($newSpell);
+          $newSpell.css(styleSettings);
+          console.log('currentVoldy top: ', currentVoldemort.$node.css('top'));
+          console.log('newSpell top: ', $newSpell.css('top'));
+          console.log('currentVoldy left: ', currentVoldemort.$node.css('left'));
+          console.log('newSpell left: ', $newSpell.css('left'));
+        }
+      }
+    }
   });
   
 });
