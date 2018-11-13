@@ -22,7 +22,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
     // it just schedules the next step
    // console.log("step is invoked");
     //setTimeout(this.step, this.timeBetweenSteps);
-    console.log(this);
+    //console.log(this);
     setTimeout(this.step.bind(this), this.timeBetweenSteps);
   };
   
@@ -41,3 +41,12 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
  
+  makeDancer.prototype.lineUp = function(i) {
+
+    var styleSettings = {
+      top: window.screen.height/4,
+      left: (window.screen.width / window.dancers.length) * i + 100,
+    }
+    this.$node.css(styleSettings);
+
+  }

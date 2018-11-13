@@ -28,6 +28,14 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $(".lineUp").click(function() {
+    console.log(window);
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp(i);
+    }
   });
 });
 
