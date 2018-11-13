@@ -25,3 +25,30 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.awkward {
+  border:10px solid chartreuse;
+  border-radius:10px;
+  position:absolute;
+}
+
+.bouncy{
+  border:10px solid aqua;
+  border-radius:10px;
+  position:absolute;
+  animation: bounce 0.5s cubic-bezier(.5,0.05,1,.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.harry{
+  border:10px solid RebeccaPurple;
+  border-radius:10px;
+  position:absolute;
+  
+}
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 70px, 0); }
+}

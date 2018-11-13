@@ -20,7 +20,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   makeDancer.prototype.step = function() {
     // the basic Dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
-    console.log("step is invoked");
+   // console.log("step is invoked");
     //setTimeout(this.step, this.timeBetweenSteps);
     setTimeout(this.step.bind(this), this.timeBetweenSteps);
   };
