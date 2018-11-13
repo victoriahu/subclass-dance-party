@@ -58,7 +58,12 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+
+    dancer.$node.mouseover(function() {
+      dancer.$node.css('content', 'url(images/phoenix.jpg)');
+    })
   });
+
 
   $(".bouncyButton").click(function(e) {
     if (e.target.attributes.charName.value === "harry") {
@@ -79,10 +84,6 @@ $(document).ready(function() {
     window.dancers.push(dancer);
   });
 
-  $(".awkward").mouseover(function() {
-    alert("HOVERED");
-    console.log("AWKWARD");
-  });
 
   $(".awkwardButton").click(function(e) {
     var dancer = new makeAwkwardDancer(
@@ -95,6 +96,7 @@ $(document).ready(function() {
     window.dancers.push(dancer);
   });
 
+  
   $(".shootHarry").click(function() {
     //iterate through all dancers 
     //if dancer is voldemort instance
@@ -143,7 +145,6 @@ $(document).ready(function() {
       $('.spell').remove();
       $('.harry').remove();
       window.numHarry = 0;
-      alert('Game over');
     });
    });
   

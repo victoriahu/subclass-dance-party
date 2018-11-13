@@ -10,8 +10,10 @@ body, a:link, a:visited, a:active{
   color: lightblue;
 }
 .title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
+  padding:5px 0px;
+  float:left;
+  background-color: transparent;
+  font-family: 'Henny Penny', cursive;
 }
 .customButton {
   padding:5px 12px;
@@ -20,9 +22,8 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
-}
-.title{
-  background-color: #777;
+  padding: 0.25rem;
+  font: satellite;
 }
 .dancer{
   position:absolute;
