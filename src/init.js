@@ -117,14 +117,35 @@ $(document).ready(function() {
           
           $("body").append($newSpell);
           $newSpell.css(styleSettings);
-          console.log('currentVoldy top: ', currentVoldemort.$node.css('top'));
-          console.log('newSpell top: ', $newSpell.css('top'));
-          console.log('currentVoldy left: ', currentVoldemort.$node.css('left'));
-          console.log('newSpell left: ', $newSpell.css('left'));
         }
       }
     }
   });
+
+   $('.shootHarryFinal').click(function() {
+     // find harry
+    var harryPosition = {};
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (window.dancers[i] instanceof makeBouncyDancer) {
+       if (window.dancers[i].name === "harry") {
+         harryPosition.left = window.dancers[i].$node.css("left"),
+         harryPosition.top = window.dancers[i].$node.css("top")
+       }
+      }
+    }
+    // iterate through spells
+    let $spells = $('.spell');
+    $spells.animate({
+      left: harryPosition.left,
+      top: harryPosition.top
+    }, 4000, function() {
+      // Animation complete.
+      $('.spell').remove();
+      $('.harry').remove();
+      window.numHarry = 0;
+      alert('Game over');
+    });
+   });
   
-});
+}); // END document.ready
 

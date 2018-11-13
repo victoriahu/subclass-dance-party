@@ -4,6 +4,7 @@ var makeBouncyDancer = function(top, left, timeBetweenSteps, name) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   //this.$node = $('<span class="dancer" id = "awkward"></span>');
   this.$node.addClass('bouncy '+ name);
+  this.name = name;
 };
 
   makeBouncyDancer.prototype = Object.create(makeDancer.prototype);
