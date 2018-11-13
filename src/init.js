@@ -29,6 +29,13 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+
+    // if awekward dancer
+    if (dancer instanceof makeAwkwardDancer) {
+      dancer.$node.mouseover(() => alert('hi'));
+    }
+    // setup click listener
+
   });
 
   $(".lineUp").click(function() {
@@ -37,5 +44,11 @@ $(document).ready(function() {
       window.dancers[i].lineUp(i);
     }
   });
+
+  $(".awkward").mouseover(function() {
+    alert("HOVERED");
+    console.log("AWKWARD");
+  });
+  
 });
 
