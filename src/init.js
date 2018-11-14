@@ -97,7 +97,11 @@ $(document).ready(function() {
   });
 
   
-  $(".shootHarry").click(function() {
+  $(".underAttack").click(function() {
+    // fidn all good guys
+    // 
+
+    //////////////////////////////////////////////////////
     //iterate through all dancers 
     //if dancer is voldemort instance
     //create an element circle ball

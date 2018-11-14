@@ -14,13 +14,20 @@ body, a:link, a:visited, a:active{
   float:left;
   background-color: transparent;
   font-family: 'Henny Penny', cursive;
+  font-size: 1.7rem;
 }
 .customButton {
   padding:5px 12px;
   float:right;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem
+}
+.customButton:hover {
+  color: white
 }
 .topbar{
-  height:32px;
+  height:3rem;
   background-color: #555;
   padding: 0.25rem;
   font: satellite;
